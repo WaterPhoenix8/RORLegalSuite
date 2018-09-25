@@ -64,26 +64,45 @@ class Club(models.Model):
 class Case(models.Model):
     """Table 11. Master List of Cases."""
     case_id = models.AutoField(primary_key=True)
-    ref_no = models.CharField('reference number', max_length=30)
-    seafarer = models.ForeignKey(Seafarer)
-    localagent = models.ForeignKey(LocalAgent)
-    principal = models.ForeignKey(Principal)
-    case_no = models.CharField('case number', max_length=50)
-    case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.')
-    correspondent = models.ForeignKey(Correspondent)
-    casehandler = models.ForeignKey(CaseHandler)
-    vessel = models.ForeignKey(Vessel)
-    typeofclaim = models.ForeignKey(TypeOfClaim)
-    contract =
-    diagnosis = models.TextField()
-    treatment_day1 = models.DateTimeField('1st treatment day', auto_now_add=True, blank=True, null=True)
 
-    counsel = models.ForeignKey(CounselOfSeafarer, verbose_name="seafarer's counsel")
+    ref_no = models.CharField('reference number', max_length=30)
+
+    seafarer = models.ForeignKey(Seafarer)
+
+    localagent = models.ForeignKey(LocalAgent)
+
+    principal = models.ForeignKey(Principal)
+
+    case_no = models.CharField('case number', max_length=50)
+
+    #max_length of case_title == total max_length of (seafarer's name, len('  vs  '), and local agent)
+    case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.')
+
+    correspondent = models.ForeignKey(Correspondent)
+
+    casehandler = models.ForeignKey(CaseHandler)
+
+    vessel = models.ForeignKey(Vessel)
+
+    typeofclaim = models.ForeignKey(TypeOfClaim)
+
+    contract = models.BooleanField('POEA SEC with CBA')
+
+    diagnosis = models.TextField()
+
+    #treatment_day1 = models.DateTimeField('1st day of treatment', auto_now_add=True, blank=True, null=True)
+    treatment_day1 = models.DateTimeField('1st day of treatment', blank=True, null=True)
+
+    counselofseafarer = models.ForeignKey(CounselOfSeafarer, verbose_name="seafarer's counsel")
+
     club = models.ForeignKey(Club)
 
-    legal_opinion = models.TextField(blank=True)
+    legal_opinion = models.BooleanField()
+
     remarks = models.TextField(blank=True)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_updated = models.DateTimeField(auto_now_add=True)
+
+    datetime_created = models.DateTimeField(auto_now_add=True)
+
+    datetime_updated = models.DateTimeField(auto_now=True)
 
 # Create your models here.
