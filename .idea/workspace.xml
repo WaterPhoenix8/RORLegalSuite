@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85648b05-1082-4fa1-a05c-c0cfe6a3c25d" name="Default" comment="" />
+    <list default="true" id="85648b05-1082-4fa1-a05c-c0cfe6a3c25d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/RORLegalSuite_root_folder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RORLegalSuite_root_folder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +15,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="164" column="46" selection-start-line="164" selection-start-column="46" selection-end-line="164" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,10 +54,11 @@
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/urls.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/settings.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/models.py" />
+        <option value="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="713" />
     <option name="width" value="734" />
     <option name="height" value="877" />
@@ -92,6 +108,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -120,6 +137,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14305556" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -144,6 +162,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/migrations/0002_auto_20180929_1736.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/settings.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/apps.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/migrations/0001_initial.py" />
@@ -170,5 +191,15 @@
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/migrations/0001_initial.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/apps.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/models.py" />
+    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/migrations/0002_auto_20180929_1736.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="164" column="46" selection-start-line="164" selection-start-column="46" selection-end-line="164" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

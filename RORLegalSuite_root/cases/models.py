@@ -1,8 +1,13 @@
 from django.db import models
 
+
 class Suffix(models.Model):
     """Table 1. Name Suffixes."""
     suffix = models.CharField(max_length=5, primary_key=True)
+
+    def __str__(self):
+        return self.suffix
+
 
 class Seafarer(models.Model):
     """Table 2. Name of Seafarers"""
@@ -17,17 +22,33 @@ class Seafarer(models.Model):
     )
     sex = models.CharField(max_length=1, choices=SEX, blank=True)
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} {self.suffix}"
+
+
 class LocalAgent(models.Model):
     """Table 3. Local Agent is the manning agency of the Principal or shipowner."""
     localagent_name = models.CharField(max_length=100, primary_key=True)
+
+    def __str__(self):
+        return self.localagent_name
+
 
 class Principal(models.Model):
     """Table 4. Principal is also the shipowner."""
     principal_name = models.CharField(max_length=100, primary_key=True)
 
+    def __str__(self):
+        return self.principal_name
+
+
 class Correspondent(models.Model):
     """Table 5. Correspondents are local port advisers to and assistants of Clubs and Members (or shipowners)."""
     correspondent_name = models.CharField(max_length=100, primary_key=True)
+
+    def __str__(self):
+        return self.correspondent_name
+
 
 class CaseHandler(models.Model):
     """Table 6. A Case Handler is a/the point person of the Correspondent"""
@@ -39,13 +60,25 @@ class CaseHandler(models.Model):
     nickname = models.CharField(max_length=50, blank=True)
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT)
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} aka '{self.nickname}'"
+
+
 class Vessel(models.Model):
     """Table 7. Vessel is the name of the ship."""
     vessel_name = models.CharField(max_length=75, primary_key=True)
 
+    def __str__(self):
+        return self.vessel_name
+
+
 class TypeOfClaim(models.Model):
     """Table 8. Types of Claim."""
     claim_type = models.CharField('type of claim', max_length=50, primary_key=True)
+
+    def __str__(self):
+        return self.claim_type
+
 
 class CounselOfSeafarer(models.Model):
     """Table 9. Lawyer for the Seafarer."""
@@ -56,10 +89,18 @@ class CounselOfSeafarer(models.Model):
     suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
 
+    def __str__(self):
+        return f"Atty. {self.first_name} {self.last_name} aka '{self.nickname}'"
+
+
 class Club(models.Model):
     """Table 10. P&I Club or Protection and Indemnity Insurance Club
      is an association of shipowners for mutual protection."""
     club_name = models.CharField(max_length=100, primary_key=True)
+
+    def __str__(self):
+        return self.club_name
+
 
 class Case(models.Model):
     """Table 11. Master List of Cases."""
@@ -77,7 +118,12 @@ class Case(models.Model):
     case_no = models.CharField('case number', max_length=50, blank=True)
 
     #max_length of case_title == total max_length of (seafarer's name, len('  vs  '), and local agent)
-    case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.', blank=True)
+    #case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.', blank=True)
+    case_title = models.CharField(
+        max_length=255,
+        default=f"{Seafarer.first_name} {Seafarer.last_name}  vs  {LocalAgent.localagent_name}, et al.",
+        blank=True,
+    )
 
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT, blank=True)
 
@@ -114,5 +160,8 @@ class Case(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True)
 
     datetime_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Ref #: {self.ref_no} -- {Seafarer.last_name} vs {LocalAgent.localagent_name} -- Case ID {self.case_id}"
 
 # Create your models here.
