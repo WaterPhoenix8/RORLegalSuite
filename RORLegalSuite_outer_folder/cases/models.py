@@ -37,7 +37,7 @@ class CaseHandler(models.Model):
     last_name = models.CharField(max_length=35)
     suffix = models.ForeignKey(Suffix, on_delete=models.CASCADE, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
-    correspondent = models.ForeignKey(Correspondent, on_delete=models.CASCADE,)
+    correspondent = models.ForeignKey(Correspondent, on_delete=models.CASCADE)
 
 class Vessel(models.Model):
     """Table 7. Vessel is the name of the ship."""
@@ -63,6 +63,7 @@ class Club(models.Model):
 
 class Case(models.Model):
     """Table 11. Master List of Cases."""
+
     case_id = models.AutoField(primary_key=True)
 
     ref_no = models.CharField('reference number', max_length=30)
@@ -73,31 +74,40 @@ class Case(models.Model):
 
     principal = models.ForeignKey(Principal, on_delete=models.CASCADE)
 
-    case_no = models.CharField('case number', max_length=50)
+    case_no = models.CharField('case number', max_length=50, blank=True)
 
     #max_length of case_title == total max_length of (seafarer's name, len('  vs  '), and local agent)
-    case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.')
+    case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.', blank=True)
 
-    correspondent = models.ForeignKey(Correspondent, on_delete=models.CASCADE)
+    correspondent = models.ForeignKey(Correspondent, on_delete=models.CASCADE, blank=True)
 
-    casehandler = models.ForeignKey(CaseHandler, on_delete=models.CASCADE)
+    casehandler = models.ForeignKey(CaseHandler, on_delete=models.CASCADE, blank=True)
 
     vessel = models.ForeignKey(Vessel, on_delete=models.CASCADE)
 
     typeofclaim = models.ForeignKey(TypeOfClaim, on_delete=models.CASCADE)
 
-    contract = models.BooleanField('POEA SEC with CBA')
+    CBA = (
+        ('Yes', 'POEA SEC with CBA'),
+        ('No', 'POEA SEC without CBA'),
+    )
+    contract = models.BooleanField('POEA SEC with CBA?', choices=CBA)
 
-    diagnosis = models.TextField()
+    diagnosis = models.TextField(blank=True)
 
     #treatment_day1 = models.DateTimeField('1st day of treatment', auto_now_add=True, blank=True, null=True)
     treatment_day1 = models.DateTimeField('1st day of treatment', blank=True, null=True)
 
-    counselofseafarer = models.ForeignKey(CounselOfSeafarer, on_delete=models.CASCADE, verbose_name="seafarer's counsel")
+    counselofseafarer = models.ForeignKey(
+        CounselOfSeafarer,
+        on_delete=models.CASCADE,
+        verbose_name="seafarer's counsel",
+        blank=True,
+    )
 
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
 
-    legal_opinion = models.BooleanField()
+    legal_opinion = models.BooleanField(blank=True, null=True)
 
     remarks = models.TextField(blank=True)
 
