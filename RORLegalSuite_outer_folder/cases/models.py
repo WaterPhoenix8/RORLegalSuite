@@ -10,7 +10,7 @@ class Seafarer(models.Model):
     first_name = models.CharField(max_length=50)
     middle_initial = models.CharField(max_length=4, blank=True)
     last_name = models.CharField(max_length=35)
-    suffix = models.ForeignKey(Suffix, on_delete=models.CASCADE, blank=True)
+    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     SEX = (
         ('M', 'Male'),
         ('F', 'Female'),
@@ -35,9 +35,9 @@ class CaseHandler(models.Model):
     first_name = models.CharField(max_length=50)
     middle_initial = models.CharField(max_length=4, blank=True)
     last_name = models.CharField(max_length=35)
-    suffix = models.ForeignKey(Suffix, on_delete=models.CASCADE, blank=True)
+    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
-    correspondent = models.ForeignKey(Correspondent, on_delete=models.CASCADE)
+    correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT)
 
 class Vessel(models.Model):
     """Table 7. Vessel is the name of the ship."""
@@ -53,7 +53,7 @@ class CounselOfSeafarer(models.Model):
     first_name = models.CharField(max_length=50)
     middle_initial = models.CharField(max_length=4, blank=True)
     last_name = models.CharField(max_length=35)
-    suffix = models.ForeignKey(Suffix, on_delete=models.CASCADE, blank=True)
+    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
 
 class Club(models.Model):
@@ -68,24 +68,24 @@ class Case(models.Model):
 
     ref_no = models.CharField('reference number', max_length=30)
 
-    seafarer = models.ForeignKey(Seafarer, on_delete=models.CASCADE)
+    seafarer = models.ForeignKey(Seafarer, on_delete=models.PROTECT)
 
-    localagent = models.ForeignKey(LocalAgent, on_delete=models.CASCADE)
+    localagent = models.ForeignKey(LocalAgent, on_delete=models.PROTECT)
 
-    principal = models.ForeignKey(Principal, on_delete=models.CASCADE)
+    principal = models.ForeignKey(Principal, on_delete=models.PROTECT)
 
     case_no = models.CharField('case number', max_length=50, blank=True)
 
     #max_length of case_title == total max_length of (seafarer's name, len('  vs  '), and local agent)
     case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.', blank=True)
 
-    correspondent = models.ForeignKey(Correspondent, on_delete=models.CASCADE, blank=True)
+    correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT, blank=True)
 
-    casehandler = models.ForeignKey(CaseHandler, on_delete=models.CASCADE, blank=True)
+    casehandler = models.ForeignKey(CaseHandler, on_delete=models.PROTECT, blank=True)
 
-    vessel = models.ForeignKey(Vessel, on_delete=models.CASCADE)
+    vessel = models.ForeignKey(Vessel, on_delete=models.PROTECT)
 
-    typeofclaim = models.ForeignKey(TypeOfClaim, on_delete=models.CASCADE)
+    typeofclaim = models.ForeignKey(TypeOfClaim, on_delete=models.PROTECT)
 
     CBA = (
         ('Yes', 'POEA SEC with CBA'),
@@ -100,12 +100,12 @@ class Case(models.Model):
 
     counselofseafarer = models.ForeignKey(
         CounselOfSeafarer,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         verbose_name="seafarer's counsel",
         blank=True,
     )
 
-    club = models.ForeignKey(Club, on_delete=models.CASCADE)
+    club = models.ForeignKey(Club, on_delete=models.PROTECT)
 
     legal_opinion = models.BooleanField(blank=True, null=True)
 
