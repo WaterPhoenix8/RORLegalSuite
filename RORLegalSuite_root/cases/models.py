@@ -127,15 +127,15 @@ class Case(models.Model):
 
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT, blank=True)
 
-    casehandler = models.ForeignKey(CaseHandler, on_delete=models.PROTECT, blank=True)
+    casehandler = models.ForeignKey(CaseHandler, on_delete=models.PROTECT, blank=True, null=True)
 
     vessel = models.ForeignKey(Vessel, on_delete=models.PROTECT)
 
     typeofclaim = models.ForeignKey(TypeOfClaim, on_delete=models.PROTECT)
 
     CBA = (
-        ('Yes', 'POEA SEC with CBA'),
-        ('No', 'POEA SEC without CBA'),
+        ('YES', 'POEA SEC with CBA'),
+        ('NO', 'POEA SEC without CBA'),
     )
     contract = models.BooleanField('POEA SEC with CBA?', choices=CBA)
 
@@ -149,6 +149,7 @@ class Case(models.Model):
         on_delete=models.PROTECT,
         verbose_name="seafarer's counsel",
         blank=True,
+        null=True,
     )
 
     club = models.ForeignKey(Club, on_delete=models.PROTECT)
