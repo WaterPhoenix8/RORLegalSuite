@@ -167,11 +167,7 @@ class Case(models.Model):
 
     #max_length of case_title == total max_length of (seafarer's name, len('  vs  '), and local agent)
     #case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.', blank=True)
-    case_title = models.CharField(
-        max_length=255,
-        default=LocalAgent.localagent_name,
-        blank=True,
-    )
+    case_title = models.CharField(max_length=255, blank=True,)
     #    default=f"{Seafarer.first_name} {Seafarer.last_name}  vs  {LocalAgent.localagent_name}, et al.",
     #    default=Seafarer.first_name, Seafarer.last_name + '  vs  ' + LocalAgent.localagent_name + ', et al.',
     #    default=f"{seafarer.first_name} {seafarer.last_name}  vs  {localagent.localagent_name}, et al.",
