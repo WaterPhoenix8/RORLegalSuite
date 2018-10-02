@@ -14,15 +14,16 @@ class Suffix(models.Model):
 
 class Seafarer(models.Model):
     """Table 2. Name of Seafarers"""
+    SEX = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+    )
+
     seafarer_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=50)
     middle_initial = models.CharField(max_length=4, blank=True)
     last_name = models.CharField(max_length=35)
     suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
-    SEX = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-    )
     sex = models.CharField(max_length=1, choices=SEX, blank=True)
 
     def __str__(self):
@@ -117,8 +118,15 @@ class Club(models.Model):
         return self.club_name
 
 
+
 class Case(models.Model):
     """Table 11. Master List of Cases."""
+
+    CBA = (
+        ('YES', 'POEA SEC with CBA'),
+        ('NO', 'POEA SEC without CBA'),
+    )
+
 
     case_id = models.AutoField(primary_key=True)
 
@@ -148,10 +156,6 @@ class Case(models.Model):
 
     typeofclaim = models.ForeignKey(TypeOfClaim, on_delete=models.PROTECT)
 
-    CBA = (
-        ('YES', 'POEA SEC with CBA'),
-        ('NO', 'POEA SEC without CBA'),
-    )
     contract = models.BooleanField('POEA SEC with CBA?', choices=CBA)
 
     diagnosis = models.TextField(blank=True)
@@ -176,6 +180,7 @@ class Case(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True)
 
     datetime_updated = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return f"Ref #: {self.ref_no} -- {Seafarer.last_name} vs {LocalAgent.localagent_name} -- Case ID {self.case_id}"
