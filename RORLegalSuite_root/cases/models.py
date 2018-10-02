@@ -45,7 +45,10 @@ class Seafarer(NameField):
     sex = models.CharField(max_length=1, choices=SEX, blank=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} {self.suffix}"
+        if self.suffix == None:
+            return f"{self.first_name} {self.last_name}"
+        else:
+            return f"{self.first_name} {self.last_name} {self.suffix}"
 
 
 class LocalAgent(models.Model):
@@ -53,6 +56,7 @@ class LocalAgent(models.Model):
     localagent_name = models.CharField(max_length=100, primary_key=True)
 
     class Meta:
+        verbose_name = 'Local Agent'
         verbose_name_plural = 'Local Agents'
 
     def __str__(self):
@@ -82,10 +86,16 @@ class CaseHandler(NameField):
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT)
 
     class Meta:
+        verbose_name = 'Case Handler'
         verbose_name_plural = 'Case Handlers'
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} aka '{self.nickname}'"
+        #return f"{self.first_name} {self.last_name} aka '{self.nickname}'"
+        if self.nickname == '':
+            return f"Atty. {self.first_name} {self.last_name}"
+        else:
+            return f"Atty. {self.first_name} {self.last_name} aka '{self.nickname}'"
+
 
 
 class Vessel(models.Model):
@@ -101,6 +111,7 @@ class TypeOfClaim(models.Model):
     claim_type = models.CharField('type of claim', max_length=50, primary_key=True)
 
     class Meta:
+        verbose_name = 'Type of Claim'
         verbose_name_plural = 'Types of Claim'
 
     def __str__(self):
@@ -113,10 +124,14 @@ class CounselOfSeafarer(NameField):
     nickname = models.CharField(max_length=50, blank=True)
 
     class Meta:
+        verbose_name = 'Counsel of Seafarer'
         verbose_name_plural = 'Counsels of Seafarers'
 
     def __str__(self):
-        return f"Atty. {self.first_name} {self.last_name} aka '{self.nickname}'"
+        if self.nickname == '':
+            return f"Atty. {self.first_name} {self.last_name}"
+        else:
+            return f"Atty. {self.first_name} {self.last_name} aka '{self.nickname}'"
 
 
 class Club(models.Model):
@@ -140,11 +155,11 @@ class Case(models.Model):
 
     case_id = models.AutoField(primary_key=True)
 
-    ref_no = models.CharField('reference number', max_length=30)
+    ref_no = models.CharField('Reference Number', max_length=30)
 
     seafarer = models.ForeignKey(Seafarer, on_delete=models.PROTECT)
 
-    localagent = models.ForeignKey(LocalAgent, on_delete=models.PROTECT)
+    localagent = models.ForeignKey(LocalAgent, on_delete=models.PROTECT, )
 
     principal = models.ForeignKey(Principal, on_delete=models.PROTECT)
 
@@ -166,12 +181,14 @@ class Case(models.Model):
 
     typeofclaim = models.ForeignKey(TypeOfClaim, on_delete=models.PROTECT)
 
-    contract = models.BooleanField('POEA SEC with CBA?', choices=CBA)
+    #contract = models.BooleanField('POEA SEC with CBA?', choices=CBA)
+    contract = models.CharField('POEA SEC with CBA?', max_length=20, choices=CBA)
 
     diagnosis = models.TextField(blank=True)
 
     #treatment_day1 = models.DateTimeField('1st day of treatment', auto_now_add=True, blank=True, null=True)
-    treatment_day1 = models.DateTimeField('1st day of treatment', blank=True, null=True)
+    #treatment_day1 = models.DateTimeField('1st day of treatment', blank=True, null=True)
+    treatment_day1 = models.DateField('1st day of treatment', blank=True, null=True)
 
     counselofseafarer = models.ForeignKey(
         CounselOfSeafarer,
