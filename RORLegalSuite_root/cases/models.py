@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class NameField(models.Model):
+    """abstract base class for 3 models: Seafarer, Casehandler, and CounselOfSeafarer"""
+    first_name = models.CharField(max_length=50)
+    middle_initial = models.CharField(max_length=4, blank=True)
+    last_name = models.CharField(max_length=35)
+    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True, null=True)
+
+    class Meta:
+        abstract = True
+
+
 class Suffix(models.Model):
     """Table 1. Name Suffixes."""
     suffix = models.CharField(max_length=5, primary_key=True)
@@ -12,7 +23,7 @@ class Suffix(models.Model):
         return self.suffix
 
 
-class Seafarer(models.Model):
+class Seafarer(NameField):
     """Table 2. Name of Seafarers"""
     SEX = (
         ('M', 'Male'),
@@ -20,10 +31,6 @@ class Seafarer(models.Model):
     )
 
     seafarer_id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=50)
-    middle_initial = models.CharField(max_length=4, blank=True)
-    last_name = models.CharField(max_length=35)
-    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     sex = models.CharField(max_length=1, choices=SEX, blank=True)
 
     def __str__(self):
@@ -57,13 +64,9 @@ class Correspondent(models.Model):
         return self.correspondent_name
 
 
-class CaseHandler(models.Model):
+class CaseHandler(NameField):
     """Table 6. A Case Handler is a/the point person of the Correspondent"""
     casehandler_id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=50)
-    middle_initial = models.CharField(max_length=4, blank=True)
-    last_name = models.CharField(max_length=35)
-    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT)
 
@@ -93,13 +96,9 @@ class TypeOfClaim(models.Model):
         return self.claim_type
 
 
-class CounselOfSeafarer(models.Model):
+class CounselOfSeafarer(NameField):
     """Table 9. Lawyer for the Seafarer."""
     counselor_id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=50)
-    middle_initial = models.CharField(max_length=4, blank=True)
-    last_name = models.CharField(max_length=35)
-    suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
 
     class Meta:
@@ -148,7 +147,7 @@ class Case(models.Model):
         blank=True,
     )
 
-    correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT, blank=True)
+    correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT, blank=True, null=True)
 
     casehandler = models.ForeignKey(CaseHandler, on_delete=models.PROTECT, blank=True, null=True)
 

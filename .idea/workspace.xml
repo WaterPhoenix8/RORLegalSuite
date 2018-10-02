@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85648b05-1082-4fa1-a05c-c0cfe6a3c25d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,10 +16,15 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+            <state relative-caret-position="-18">
+              <caret line="151" column="92" selection-start-line="151" selection-start-column="87" selection-end-line="151" selection-end-column="92" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/RORLegalSuite/settings.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
@@ -48,6 +52,7 @@
     <findStrings>
       <find>ForeignKey</find>
       <find>CASCADE</find>
+      <find>ForeignK</find>
     </findStrings>
     <replaceStrings>
       <replace>PROTECT</replace>
@@ -183,7 +188,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/settings.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/apps.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/migrations/0001_initial.py" />
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/models.py" />
@@ -260,10 +264,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/RORLegalSuite/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+        <state relative-caret-position="-18">
+          <caret line="151" column="92" selection-start-line="151" selection-start-column="87" selection-end-line="151" selection-end-column="92" />
         </state>
       </provider>
     </entry>
