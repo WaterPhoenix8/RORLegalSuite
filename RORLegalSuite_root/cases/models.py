@@ -169,9 +169,12 @@ class Case(models.Model):
     #case_title = models.CharField(max_length=200, default='' + '  vs  ' + '' + ', et al.', blank=True)
     case_title = models.CharField(
         max_length=255,
-        default=f"{Seafarer.first_name} {Seafarer.last_name}  vs  {LocalAgent.localagent_name}, et al.",
+        default=LocalAgent.localagent_name,
         blank=True,
     )
+    #    default=f"{Seafarer.first_name} {Seafarer.last_name}  vs  {LocalAgent.localagent_name}, et al.",
+    #    default=Seafarer.first_name, Seafarer.last_name + '  vs  ' + LocalAgent.localagent_name + ', et al.',
+    #    default=f"{seafarer.first_name} {seafarer.last_name}  vs  {localagent.localagent_name}, et al.",
 
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT, blank=True, null=True)
 
@@ -210,6 +213,6 @@ class Case(models.Model):
 
 
     def __str__(self):
-        return f"Ref #: {self.ref_no} -- {Seafarer.last_name} vs {LocalAgent.localagent_name} -- Case ID {self.case_id}"
+        return f"Ref #: {self.ref_no} -- {self.seafarer.last_name} vs {self.localagent.localagent_name} -- Case ID {self.case_id}"
 
 # Create your models here.
