@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85648b05-1082-4fa1-a05c-c0cfe6a3c25d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="169" column="61" selection-start-line="169" selection-start-column="61" selection-end-line="169" selection-end-column="61" />
+            <state relative-caret-position="153">
+              <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -53,6 +54,7 @@
       <find>ForeignKey</find>
       <find>CASCADE</find>
       <find>ForeignK</find>
+      <find>NameF</find>
     </findStrings>
     <replaceStrings>
       <replace>PROTECT</replace>
@@ -269,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="169" column="61" selection-start-line="169" selection-start-column="61" selection-end-line="169" selection-end-column="61" />
+        <state relative-caret-position="153">
+          <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
         </state>
       </provider>
     </entry>
