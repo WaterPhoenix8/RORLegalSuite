@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Suffix(models.Model):
+    """Table 1. Name Suffixes."""
+    suffix = models.CharField(max_length=5, primary_key=True)
+
+    class Meta:
+        verbose_name_plural = 'suffixes'
+
+    def __str__(self):
+        return self.suffix
+
+
 class NameField(models.Model):
     """abstract base class for 3 models: Seafarer, Casehandler, and CounselOfSeafarer"""
     first_name = models.CharField(max_length=50)
@@ -12,15 +23,15 @@ class NameField(models.Model):
         abstract = True
 
 
-class Suffix(models.Model):
-    """Table 1. Name Suffixes."""
-    suffix = models.CharField(max_length=5, primary_key=True)
-
-    class Meta:
-        verbose_name_plural = 'suffixes'
-
-    def __str__(self):
-        return self.suffix
+#class Suffix(models.Model):
+#    """Table 1. Name Suffixes."""
+#    suffix = models.CharField(max_length=5, primary_key=True)
+#
+#    class Meta:
+#        verbose_name_plural = 'suffixes'
+#
+#    def __str__(self):
+#        return self.suffix
 
 
 class Seafarer(NameField):
