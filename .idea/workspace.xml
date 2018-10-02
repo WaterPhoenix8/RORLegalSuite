@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85648b05-1082-4fa1-a05c-c0cfe6a3c25d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="638">
@@ -22,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="238">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -64,10 +65,11 @@
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/settings.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/models.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" />
+        <option value="$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="713" />
     <option name="width" value="734" />
     <option name="height" value="877" />
@@ -202,16 +204,6 @@
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/migrations/0002_auto_20180929_1736.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -262,6 +254,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="139" column="56" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
