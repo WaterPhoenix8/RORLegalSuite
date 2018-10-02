@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85648b05-1082-4fa1-a05c-c0cfe6a3c25d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,16 +14,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="139" column="56" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
+            <state relative-caret-position="572">
+              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -64,8 +64,8 @@
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/urls.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/RORLegalSuite/settings.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_outer_folder/cases/models.py" />
-        <option value="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" />
         <option value="$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py" />
+        <option value="$PROJECT_DIR$/RORLegalSuite_root/cases/models.py" />
       </list>
     </option>
   </component>
@@ -250,13 +250,6 @@
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/migrations/0002_auto_20180929_1736.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="139" column="56" selection-start-line="139" selection-start-column="56" selection-end-line="139" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -264,6 +257,13 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RORLegalSuite_root/cases/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
         </state>
       </provider>
     </entry>

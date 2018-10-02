@@ -5,6 +5,9 @@ class Suffix(models.Model):
     """Table 1. Name Suffixes."""
     suffix = models.CharField(max_length=5, primary_key=True)
 
+    class Meta:
+        verbose_name_plural = 'suffixes'
+
     def __str__(self):
         return self.suffix
 
@@ -29,6 +32,9 @@ class Seafarer(models.Model):
 class LocalAgent(models.Model):
     """Table 3. Local Agent is the manning agency of the Principal or shipowner."""
     localagent_name = models.CharField(max_length=100, primary_key=True)
+
+    class Meta:
+        verbose_name_plural = 'Local Agents'
 
     def __str__(self):
         return self.localagent_name
@@ -60,6 +66,9 @@ class CaseHandler(models.Model):
     nickname = models.CharField(max_length=50, blank=True)
     correspondent = models.ForeignKey(Correspondent, on_delete=models.PROTECT)
 
+    class Meta:
+        verbose_name_plural = 'Case Handlers'
+
     def __str__(self):
         return f"{self.first_name} {self.last_name} aka '{self.nickname}'"
 
@@ -76,6 +85,9 @@ class TypeOfClaim(models.Model):
     """Table 8. Types of Claim."""
     claim_type = models.CharField('type of claim', max_length=50, primary_key=True)
 
+    class Meta:
+        verbose_name_plural = 'Types of Claim'
+
     def __str__(self):
         return self.claim_type
 
@@ -88,6 +100,9 @@ class CounselOfSeafarer(models.Model):
     last_name = models.CharField(max_length=35)
     suffix = models.ForeignKey(Suffix, on_delete=models.PROTECT, blank=True)
     nickname = models.CharField(max_length=50, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Counsels of Seafarers'
 
     def __str__(self):
         return f"Atty. {self.first_name} {self.last_name} aka '{self.nickname}'"
