@@ -4,5 +4,8 @@
 
 from django.http import HttpResponse
 
-def cases(request):
-    return HttpResponse("Master List of Cases")
+#def cases(request):
+#    return HttpResponse("Master List of Cases")
+
+def index(request):
+    return HttpResponse("Welcome to the Cases Index page!")
